@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BrawlStore — Премиум товары Brawl Stars</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#950bda",
+                        "background-light": "#f8f8ff",
+                        "background-dark": "#1c1022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .gradient-text {
+            background: linear-gradient(135deg, #950bda 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #950bda 0%, #4f46e5 100%);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(149, 11, 218, 0.1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(149, 11, 218, 0.2);
+        }
+        .ticker-scroll {
+            display: flex;
+            width: fit-content;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .dot-grid {
+            background-image: radial-gradient(#950bda 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-slate-900 overflow-x-hidden">
+<!-- 1. Navigation -->
+<nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-primary/10 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex items-center gap-2">
+<div class="size-10 gradient-bg rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<span class="text-2xl font-black tracking-tight text-slate-900">Brawl<span class="text-primary">Store</span></span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#benefits">Преимущества</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#how-it-works">Как купить</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#pricing">Товары</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#reviews">Отзывы</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#faq">FAQ</a>
+</div>
+<button class="gradient-bg text-white px-8 py-3 rounded-full font-bold text-sm shadow-lg shadow-primary/30 hover:opacity-90 transition-all">
+                    Купить гемы
+                </button>
+</div>
+</div>
+</nav>
+<!-- 2. Hero Section -->
+<section class="relative pt-12 pb-24 overflow-hidden">
+<div class="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-10">
+<div class="absolute inset-0 dot-grid"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="text-sm font-bold text-primary uppercase tracking-wider">Все товары в наличии</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black leading-tight text-slate-900">
+                    Твой лучший донат в <br/>
+<span class="gradient-text">Brawl Stars</span>
+</h1>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<p class="font-medium text-slate-600">Официальное пополнение через Supercell ID</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<p class="font-medium text-slate-600">Доставка в течение 5-15 минут 24/7</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<p class="font-medium text-slate-600">Гарантия безопасности вашего аккаунта</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="gradient-bg text-white px-10 py-5 rounded-xl font-bold text-lg shadow-xl shadow-primary/30 hover:scale-105 transition-all">
+                        Перейти в каталог
+                    </button>
+<button class="bg-white border-2 border-primary/20 text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all">
+                        Узнать больше
+                    </button>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-4">
+<div class="size-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden" data-alt="User avatar 1">
+<img alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9NZVbtAA8yEW1-ieLhQo90Y8G3WnPz6iSucmaEpmeBhqvbUbLPLjSbZe7bJJpn732psv9Z5t2X5NmwYq9OyrT6gyJsZNoPSTuVUN8EAap301vukKIs5ULBRHWP7GwUQWPip4tsWxTtW64PZRRpHzORK3r57yeDx5S8p2Qx-o9l6WhbUSgL6xX25oqfrJizrTtm_9axOfZUjxA-sARMD5y54bVLoKwoSZdCk6D8UY0xdKcRK04JIfxyhyeDu_e5xb0BiLNVABjivN"/>
+</div>
+<div class="size-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden" data-alt="User avatar 2">
+<img alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk5oPJTj5NBjmENnSLPg6zHL1l3jem2Kbadef9gY9V_rCF9nvNFbvZLxaugYBd_p2RfNi4CmV_2pmqA_mneUTztfJZSVRccuudWSNMtjZBqMWbdNZoikTZuvjhtZz_tfpZM3CXZH0eR4Yc8W0-6RkpBCq7TKSc8Ih8AwneBZNuHNdOlQAhz6BJ2cqXYFvdUTmynQ0Wakk67XPPkAswaGma8DOZ51X3dJ9nKqK-go0C1KGkC3LuNT3ffZB2ayEpZoeax-tE34ginEce"/>
+</div>
+<div class="size-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden" data-alt="User avatar 3">
+<img alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYuxanDAf_jQTQ7p0Re1lk4UsYrK8QCObeajy7qaW1EF2JzZZDkzhIskQKokd4ZLJWq1J87d0p7KkrbIx71e_KYl1PNxoUBSQzJd5zxm7OTOxEKgZxIY8UQyyFnHwwfKukLFcolx_YHkYdqcHNlNoPE4YBH1Atj8xP-qfxbmfWXL3DFDdgXPWcPq65dvU4eU5T1_NLZNmrvDcbN7XrZKu-SppQVTXESrZ_cALZCrmd4pwcjwlHM6LC5g9ffkwYxeINf39u4zhnF7cm"/>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold">1200+ довольных клиентов</p>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+<span class="material-symbols-outlined text-xs fill-current">star</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative z-10 rounded-[3rem] p-4 bg-gradient-to-br from-primary to-blue-500 shadow-2xl">
+<div class="bg-white rounded-[2.5rem] overflow-hidden aspect-square flex items-center justify-center">
+<div class="w-full h-full bg-slate-100 flex items-center justify-center" data-alt="Epic Brawl Stars Character illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5cFKZaePH6Hy8Gt7duBCzXORNnjeS5G8na8s8KdIbbUuTO5UQC1kWRgOIOM9RqMeqHDnvGtNuesO4a-EZnD48cmDDKaYit6DtbKg6D3zESDRHsfnyD7Cm2PTcM-1iIkR7FrdZ-2osIpXYL8ja8AkusEJfgr7SNsG0t-fZTgTIRQvtcOHK-WXvPRteDRL0onoSNNb7PiK5dKBm6USntQPfBfMzjguxqB5UDzyViND5yQMeHSDEDxgKNRPn_f2JSzH58VQoaDTSi9zv');">
+<span class="material-symbols-outlined text-9xl text-slate-300">smart_toy</span>
+</div>
+</div>
+</div>
+<div class="absolute -top-6 -right-6 z-20 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-slate-100">
+<div class="size-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase">Рейтинг сервиса</p>
+<p class="text-xl font-black">4.9 / 5.0</p>
+</div>
+</div>
+<div class="absolute -bottom-10 -left-10 z-20 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+<p class="text-xs text-slate-400 font-bold uppercase mb-2">Последняя покупка</p>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">BP</div>
+<p class="font-bold">Brawl Pass Plus</p>
+<p class="text-slate-400 text-sm">2 мин. назад</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Ticker -->
+<div class="py-10 bg-slate-100 overflow-hidden border-y border-slate-200">
+<div class="ticker-scroll gap-12 text-2xl font-black text-slate-300 uppercase italic">
+<span>Brawl Pass Plus</span>
+<span>•</span>
+<span>2000 Gems</span>
+<span>•</span>
+<span>Legendary Skins</span>
+<span>•</span>
+<span>Power Points</span>
+<span>•</span>
+<span>Brawl Pass Plus</span>
+<span>•</span>
+<span>2000 Gems</span>
+<span>•</span>
+<span>Legendary Skins</span>
+<span>•</span>
+<span>Power Points</span>
+<span>•</span>
+<span>Brawl Pass Plus</span>
+<span>•</span>
+<span>2000 Gems</span>
+<span>•</span>
+<span>Legendary Skins</span>
+<span>•</span>
+<span>Power Points</span>
+</div>
+</div>
+<!-- 4. Benefits Section -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="benefits">
+<div class="text-center space-y-4 mb-16">
+<h2 class="text-4xl font-black">Почему выбирают нас</h2>
+<p class="text-slate-500 max-w-2xl mx-auto">Мы создали идеальную платформу для тех, кто ценит свое время и безопасность своего игрового прогресса.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-8">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Мгновенная доставка</h3>
+<p class="text-slate-500 leading-relaxed">Система автоматически обрабатывает 90% заказов. Вы получите свой товар почти сразу после оплаты.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-8">
+<span class="material-symbols-outlined text-3xl">shield</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Полная безопасность</h3>
+<p class="text-slate-500 leading-relaxed">Мы не требуем пароль от аккаунта. Все операции проходят через защищенные шлюзы Supercell.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-green-100 flex items-center justify-center text-green-600 mb-8">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Лучшие цены</h3>
+<p class="text-slate-500 leading-relaxed">Работаем напрямую с поставщиками, что позволяет нам предлагать самые низкие цены на рынке.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 mb-8">
+<span class="material-symbols-outlined text-3xl">headset_mic</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Поддержка 24/7</h3>
+<p class="text-slate-500 leading-relaxed">Наши операторы всегда в сети и готовы помочь с любым вопросом в Telegram или чате.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 mb-8">
+<span class="material-symbols-outlined text-3xl">card_giftcard</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Бонусная система</h3>
+<p class="text-slate-500 leading-relaxed">Кэшбэк с каждой покупки до 10% на ваш внутренний баланс магазина.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-white p-10 rounded-3xl soft-shadow hover-lift transition-all border border-slate-50">
+<div class="size-16 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-600 mb-8">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Нам доверяют</h3>
+<p class="text-slate-500 leading-relaxed">Более 15,000 отзывов в открытых источниках и тысячи довольных игроков каждый месяц.</p>
+</div>
+</div>
+</section>
+<!-- 5. Stats Section -->
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="gradient-bg rounded-[3rem] p-12 lg:p-20 flex flex-wrap gap-12 justify-center lg:justify-between items-center text-white shadow-2xl shadow-primary/40">
+<div class="text-center lg:text-left flex-1 min-w-[200px]">
+<p class="text-6xl font-black mb-2">100k+</p>
+<p class="text-lg font-medium opacity-80 uppercase tracking-widest">Продаж</p>
+</div>
+<div class="text-center lg:text-left flex-1 min-w-[200px]">
+<p class="text-6xl font-black mb-2">15k+</p>
+<p class="text-lg font-medium opacity-80 uppercase tracking-widest">Отзывов</p>
+</div>
+<div class="text-center lg:text-left flex-1 min-w-[200px]">
+<p class="text-6xl font-black mb-2">50k+</p>
+<p class="text-lg font-medium opacity-80 uppercase tracking-widest">Игроков</p>
+</div>
+<div class="text-center lg:text-left flex-1 min-w-[200px]">
+<p class="text-6xl font-black mb-2">1.2k+</p>
+<p class="text-lg font-medium opacity-80 uppercase tracking-widest">В сети</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. How it works -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="how-it-works">
+<div class="text-center space-y-4 mb-20">
+<h2 class="text-4xl font-black">Как это работает</h2>
+<p class="text-slate-500">Всего 3 простых шага до вашей заветной прокачки</p>
+</div>
+<div class="relative flex flex-col md:flex-row gap-12">
+<div class="hidden md:block absolute top-12 left-0 w-full h-0.5 border-t-2 border-dashed border-primary/20 -z-10"></div>
+<div class="flex-1 text-center group">
+<div class="size-24 rounded-full bg-white soft-shadow flex items-center justify-center mx-auto mb-8 border-4 border-white ring-4 ring-primary/5 group-hover:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-4xl text-primary font-bold">shopping_cart</span>
+</div>
+<h3 class="text-xl font-bold mb-4">1. Выбор товара</h3>
+<p class="text-slate-500">Выберите гемы или пропуск в нашем каталоге.</p>
+</div>
+<div class="flex-1 text-center group">
+<div class="size-24 rounded-full bg-white soft-shadow flex items-center justify-center mx-auto mb-8 border-4 border-white ring-4 ring-primary/5 group-hover:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-4xl text-primary font-bold">credit_card</span>
+</div>
+<h3 class="text-xl font-bold mb-4">2. Оплата</h3>
+<p class="text-slate-500">Оплатите заказ любым удобным способом.</p>
+</div>
+<div class="flex-1 text-center group">
+<div class="size-24 rounded-full bg-white soft-shadow flex items-center justify-center mx-auto mb-8 border-4 border-white ring-4 ring-primary/5 group-hover:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-4xl text-primary font-bold">celebration</span>
+</div>
+<h3 class="text-xl font-bold mb-4">3. Готово!</h3>
+<p class="text-slate-500">Товары поступят на ваш аккаунт моментально.</p>
+</div>
+</div>
+</section>
+<!-- 7. Reviews Section -->
+<section class="py-24 bg-slate-50" id="reviews">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row justify-between items-end gap-6 mb-16">
+<div class="space-y-4">
+<h2 class="text-4xl font-black">Отзывы наших игроков</h2>
+<p class="text-slate-500">Посмотрите, что говорят те, кто уже прокачал свой аккаунт с нами.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-white transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-12 rounded-full gradient-bg text-white flex items-center justify-center hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review Card 1 -->
+<div class="bg-white p-8 rounded-3xl soft-shadow relative">
+<span class="material-symbols-outlined text-primary/10 text-8xl absolute top-6 right-8 select-none">format_quote</span>
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-8 italic">"Лучший сервис, который я пробовал. Купил Бравл Пасс Плюс, пришел через 5 минут. Теперь буду донатить только здесь!"</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">АК</div>
+<div>
+<p class="font-bold">Алексей К.</p>
+<p class="text-xs text-slate-400">Вчера в 14:30</p>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-white p-8 rounded-3xl soft-shadow relative">
+<span class="material-symbols-outlined text-primary/10 text-8xl absolute top-6 right-8 select-none">format_quote</span>
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-8 italic">"Очень удобно. Оплата прошла быстро, поддержка вежливая. Не нужно передавать аккаунт, все через ID."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">МП</div>
+<div>
+<p class="font-bold">Максим П.</p>
+<p class="text-xs text-slate-400">Сегодня в 09:15</p>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-white p-8 rounded-3xl soft-shadow relative">
+<span class="material-symbols-outlined text-primary/10 text-8xl absolute top-6 right-8 select-none">format_quote</span>
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-slate-600 mb-8 italic">"Доставили 2000 гемов буквально за минуту. Обожаю этот магазин! Рекомендую всем друзьям из клуба."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">ДР</div>
+<div>
+<p class="font-bold">Дмитрий Р.</p>
+<p class="text-xs text-slate-400">2 дня назад</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Pricing Section -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="pricing">
+<div class="text-center space-y-6 mb-16">
+<h2 class="text-4xl font-black">Популярные товары</h2>
+<div class="flex items-center justify-center gap-4">
+<span class="text-sm font-bold text-slate-400">Стандарт</span>
+<div class="w-14 h-8 bg-slate-200 rounded-full p-1 cursor-pointer relative">
+<div class="size-6 bg-white rounded-full shadow-md absolute left-1"></div>
+</div>
+<span class="text-sm font-bold">Наборы с выгодой</span>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-[10px] font-black uppercase rounded-full tracking-widest">-20%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+<!-- Price Card 1 -->
+<div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 soft-shadow">
+<p class="text-lg font-bold mb-2">Набор Начинающий</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-black">199₽</span>
+<span class="text-slate-400 text-sm line-through">299₽</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        30 Гемов
+                    </li>
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        1000 Монет
+                    </li>
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        Мгновенная доставка
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary/20 text-primary font-bold hover:bg-primary/5 transition-all">Купить сейчас</button>
+</div>
+<!-- Price Card 2 - Popular -->
+<div class="gradient-bg p-10 rounded-[2.5rem] text-white shadow-2xl shadow-primary/40 relative scale-110 z-10">
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-900 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-xl">Популярный выбор</div>
+<p class="text-lg font-bold mb-2 opacity-90">Brawl Pass Plus</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-black text-white">899₽</span>
+<span class="text-white/50 text-sm line-through">1299₽</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-white text-sm">done</span>
+                        Все награды сезона
+                    </li>
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-white text-sm">done</span>
+                        2 Эксклюзивных скина
+                    </li>
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-white text-sm">done</span>
+                        Титул и значок профиля
+                    </li>
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-white text-sm">done</span>
+                        +20% опыта квестов
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-white text-primary font-bold hover:bg-slate-50 transition-all shadow-xl">Забрать пропуск</button>
+</div>
+<!-- Price Card 3 -->
+<div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 soft-shadow">
+<p class="text-lg font-bold mb-2">Набор Чемпион</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-black">2490₽</span>
+<span class="text-slate-400 text-sm line-through">3500₽</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        360 Гемов
+                    </li>
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        10,000 Монет
+                    </li>
+<li class="flex items-center gap-3 text-slate-600 font-medium">
+<span class="material-symbols-outlined text-green-500 text-sm">done</span>
+                        5000 Очков силы
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary/20 text-primary font-bold hover:bg-primary/5 transition-all">Купить сейчас</button>
+</div>
+</div>
+</section>
+<!-- 9. FAQ Section -->
+<section class="py-24 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8" id="faq">
+<div class="text-center space-y-4 mb-16">
+<h2 class="text-4xl font-black">Часто задаваемые вопросы</h2>
+<p class="text-slate-500">Все, что вы хотели знать о донате в Brawl Stars</p>
+</div>
+<div class="space-y-4">
+<div class="bg-white p-6 rounded-2xl border border-slate-100 soft-shadow cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="font-bold">Безопасно ли это для моего аккаунта?</h4>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 soft-shadow cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="font-bold">Нужно ли передавать данные входа?</h4>
+<span class="material-symbols-outlined text-primary">remove</span>
+</div>
+<div class="pt-4 text-slate-500 text-sm leading-relaxed">
+                    Нет, нам не нужен ваш пароль. Мы работаем через официальную систему пополнения по Supercell ID или Player Tag. Это исключает любые риски кражи аккаунта.
+                </div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 soft-shadow cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="font-bold">Как быстро придут гемы после оплаты?</h4>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 soft-shadow cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="font-bold">Что делать, если товар не пришел?</h4>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 soft-shadow cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="font-bold">Какие способы оплаты вы принимаете?</h4>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Final CTA -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="gradient-bg rounded-[3rem] p-12 lg:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="text-4xl lg:text-6xl font-black">Готов прокачать аккаунт?</h2>
+<p class="text-xl opacity-90 max-w-2xl mx-auto">Подпишись на нашу рассылку, чтобы получать уведомления об акциях и секретные промокоды на гемы.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 px-8 py-5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm" placeholder="Ваш Email" type="email"/>
+<button class="bg-white text-primary px-10 py-5 rounded-xl font-bold hover:scale-105 transition-all shadow-lg">Подписаться</button>
+</div>
+<p class="text-xs opacity-60">Никакого спама, только полезные предложения. Отписаться можно в любой момент.</p>
+</div>
+</div>
+</section>
+<!-- 11. Footer -->
+<footer class="bg-slate-100 py-20 border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<div class="size-8 gradient-bg rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+</div>
+<span class="text-xl font-black tracking-tight text-slate-900">BrawlStore</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">Крупнейший маркетплейс игровых ценностей Brawl Stars. Работаем официально с 2021 года.</p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">send</span>
+</a>
+<a class="size-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+</a>
+<a class="size-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">forum</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-black mb-6 uppercase text-xs tracking-widest text-slate-400">Магазин</h5>
+<ul class="space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-primary transition-all" href="#">Гемы (Кристаллы)</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Brawl Pass Plus</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Скины</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Очки силы</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-black mb-6 uppercase text-xs tracking-widest text-slate-400">Информация</h5>
+<ul class="space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-primary transition-all" href="#">Как это работает</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Гарантии</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Отзывы клиентов</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-black mb-6 uppercase text-xs tracking-widest text-slate-400">Правовая информация</h5>
+<ul class="space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-primary transition-all" href="#">Пользовательское соглашение</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Политика конфиденциальности</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Оферта</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-slate-200 text-sm text-slate-400 font-medium">
+<p>© 2024 BrawlStore. Все права защищены.</p>
+<div class="flex items-center gap-6">
+<span>Supercell is a trademark of Supercell Oy.</span>
+<div class="flex gap-2 grayscale opacity-50">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
